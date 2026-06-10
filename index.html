@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zain Profile</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background: linear-gradient(135deg,#000000,#111111,#1a1a1a);
+    font-family: 'Poppins', sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+}
+
+.frame{
+    width:420px;
+    background:#111;
+    border:8px solid gold;
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 0 30px gold;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 20px gold;
+    }
+    to{
+        box-shadow:0 0 40px gold;
+    }
+}
+
+.profile{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:6px solid gold;
+    object-fit:cover;
+}
+
+h1{
+    color:gold;
+    margin-top:15px;
+    font-size:34px;
+}
+
+p{
+    color:white;
+    margin-top:10px;
+    font-size:18px;
+}
+
+audio{
+    margin-top:20px;
+    width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="frame" id="mainContent" style="display:none;">
+    
+    <!-- Apni photo ka naam photo.jpg rakho -->
+    <img src="photo.jpg" class="profile">
+
+    <h1>My Name Is Zain</h1>
+
+    <p>Welcome To My Personal Page ❤️</p>
+
+    <!-- Apne song ka naam music.mp3 rakho -->
+    <audio controls autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+</div>
+
+<script>
+
+let password = prompt("Enter Password");
+
+if(password === "zain123"){
+    document.getElementById("mainContent").style.display = "block";
+}
+else{
+    document.body.innerHTML = `
+    <h1 style="
+    color:red;
+    font-family:Arial;
+    text-align:center;">
+    Wrong Password!
+    </h1>`;
+}
+
+</script>
+
+</body>
+</html>
